@@ -1,0 +1,173 @@
+/* 
+  Name: Desiree Braxton
+  Date: 2025-08-21
+  File: styles.css
+  Description: Shared external stylesheet. Uses Flexbox/Grid for responsive layout.
+*/
+
+/* ---------- CSS Reset & Base ---------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+html, body {
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: "Roboto", system-ui, -apple-system, Segoe UI, Arial, sans-serif;
+  color: #111827;             /* slate-900 */
+  background: #ffffff;
+  line-height: 1.55;
+  min-height: 100vh;          /* allow sticky footer frame */
+  display: flex;
+  flex-direction: column;     /* Developer: Flex column for global page frame */
+}
+
+/* ---------- Color tokens (for consistent theme) ---------- */
+:root {
+  --brand: #6941C6;           /* violet-600 */
+  --brand-dark: #53389E;
+  --ink: #111827;
+  --muted: #6B7280;           /* gray-500 */
+  --bg-soft: #F3F4F6;         /* gray-100 */
+  --link: #1D4ED8;            /* blue-700 */
+}
+
+/* ---------- Reusable layout helpers ---------- */
+.container {
+  width: min(1100px, 92vw);
+  margin-inline: auto;
+}
+
+.lead {
+  font-size: 1.125rem;
+  color: var(--ink);
+}
+
+img {
+  max-width: 100%;
+  height: auto;              /* Developer: keep images responsive */
+  display: block;
+}
+
+/* ---------- Header & Branding (Flexbox) ---------- */
+.site-header {
+  background: linear-gradient(90deg, var(--brand), var(--brand-dark));
+  color: #fff;
+}
+.branding {
+  /* Developer: Flexbox aligns logo + title */
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 16px 0;
+}
+#site-title {
+  font-size: clamp(1.25rem, 1.2rem + 1vw, 1.75rem);
+  margin: 0;
+}
+
+/* ---------- Navigation (Flexbox) ---------- */
+.site-nav {
+  background: #ffffff;
+  border-bottom: 1px solid #E5E7EB; /* gray-200 */
+}
+.site-nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;             /* Developer: horizontal nav */
+  gap: 10px 18px;
+  flex-wrap: wrap;           /* wrap on small screens to avoid horizontal scroll */
+  padding: 10px 0;
+}
+.site-nav a {
+  text-decoration: none;
+  color: var(--ink);
+  padding: 8px 10px;
+  border-radius: 8px;
+}
+.site-nav a:hover,
+.site-nav a:focus {
+  background: var(--bg-soft);
+}
+
+/* ---------- Main content area (Grid on wider screens) ---------- */
+main.container {
+  padding: 22px 0;
+}
+/* Developer: Two-column grid when space allows */
+@media (min-width: 900px) {
+  .two-col {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 28px;
+    align-items: start;
+  }
+}
+
+/* ---------- Article / Section styling ---------- */
+.content h2,
+.content h3 {
+  margin-top: 0;
+}
+.content p { margin: 0 0 1rem; }
+
+/* ---------- Footer ---------- */
+.site-footer {
+  margin-top: auto;            /* Developer: pushes footer to bottom (sticky frame) */
+  background: #111827;
+  color: #E5E7EB;
+}
+.site-footer .inner {
+  padding: 20px 0;
+}
+.site-footer a { color: #E5E7EB; }
+
+/* ---------- Table Styles (for About/Contact) ---------- */
+.table-wrap {
+  overflow-x: auto;           /* Developer: prevent horizontal scroll on small screens */
+  border: 1px solid #E5E7EB;
+  border-radius: 10px;
+  background: #fff;
+}
+table.data { 
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 420px;
+}
+.data thead th {
+  background: var(--bg-soft);
+  text-align: left;
+  padding: 10px 12px;
+  font-weight: 700;
+}
+.data td {
+  padding: 10px 12px;
+  border-top: 1px solid #F3F4F6;
+}
+.data tbody tr:nth-child(even) {
+  background: #FAFAFB;
+}
+
+/* ---------- Gallery (Responsive Grid) ---------- */
+.gallery-grid {
+  /* Developer: CSS Grid creates dynamic columns without media queries */
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+}
+.figure {
+  margin: 0;
+}
+.figure figcaption {
+  color: var(--muted);
+  font-size: 0.95rem;
+  margin-top: 8px;
+}
+
+/* ---------- Utility ---------- */
+.muted { color: var(--muted); }
+hr.soft { border: 0; height: 1px; background: #E5E7EB; margin: 24px 0; }

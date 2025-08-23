@@ -1,0 +1,86 @@
+<!--
+  Name: Desiree Braxton
+  Date: 2025-08-21
+  File: about.html
+  Description: About page. Includes an HTML table styled via CSS per assessment requirements.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>About — Desiree Braxton</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;600;700&display=swap" rel="stylesheet">
+
+</head>
+<body>
+  <header class="site-header">
+    <!-- Developer: Branding area with logo and site title (Flexbox) -->
+    <div class="container branding">
+      <img src="images/logo.svg" alt="Desiree Braxton logo" width="56" height="56">
+      <h1 id="site-title">Desiree Braxton Portfolio</h1>
+    </div>
+  </header>
+
+  <nav class="site-nav" aria-label="Primary">
+    <!-- Developer: Styled unordered list provides main navigation links -->
+    <div class="container">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="interests.html">Interests</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main class="container" role="main">
+    <article class="content">
+      <header><h2>About Me</h2></header>
+      <p class="lead">I’m a curious learner who enjoys building small, useful tools and turning ideas into working prototypes. My current focus is on the core web stack—HTML, CSS, and JavaScript.</p>
+      <p>Outside of class, I explore design systems, accessibility best practices, and ways to automate repetitive tasks so I can move faster with fewer errors.</p>
+
+      <h3>Education & Skills (Table)</h3>
+      <!-- Developer: Table with th header row + 3+ rows, styled via external CSS -->
+      <div class="table-wrap">
+        <table class="data">
+          <thead>
+            <tr>
+              <th>Year</th>
+              <th>Focus / Achievement</th>
+              <th>Notes</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>2023</td>
+              <td>Intro to CS & Web</td>
+              <td>Learned HTML semantics and site structure.</td>
+            </tr>
+            <tr>
+              <td>2024</td>
+              <td>Front‑End Practice</td>
+              <td>Built projects using CSS Flexbox and Grid layouts.</td>
+            </tr>
+            <tr>
+              <td>2025</td>
+              <td>Portfolio Iteration</td>
+              <td>Applied responsive patterns and validation workflows.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </article>
+  </main>
+  <footer class="site-footer">
+    <!-- Developer: Secondary footer content -->
+    <div class="container inner">
+      <p>&copy; 2025 Desiree Braxton. All rights reserved.</p>
+      <p class="muted">Built with semantic HTML5 + external CSS (Flexbox/Grid). Validated with W3C services.</p>
+    </div>
+  </footer>
+
+</body>
+</html>
